@@ -29,6 +29,15 @@ services:
       - jc
     restart: unless-stopped
 
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - jc
+    restart: unless-stopped
+
 networks:
   jc:
     external:
